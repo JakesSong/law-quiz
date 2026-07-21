@@ -34,3 +34,7 @@ Safari로 열고 공유 → "홈 화면에 추가"를 누르면 주소창 없이
 | 파일 | 설명 |
 |---|---|
 | `index.html` | 앱 전체 (HTML·CSS·JS·문항 데이터 포함, 단일 파일) |
+
+## 앱 수정 후 재배포 (동기화)
+
+`index.html`을 고쳐도 GitHub Pages에 자동 반영되지 않으므로 직접 다시 푸시해야 합니다. 저장소 폴더에서 `git add index.html README.md && git commit -m "update" && git push` 하면 Pages가 자동 재빌드되고 1~2분 뒤 https://jakessong.github.io/law-quiz/ 에 반영됩니다. 커밋 대상은 항상 `index.html` / `README.md` / `.nojekyll` 세 파일뿐이며, 강의자료 원본(PDF·docx)이 딸려 들어가지 않도록 `git status`로 먼저 확인하세요. 브라우저 캐시로 구버전이 보이면 강력 새로고침(Cmd+Shift+R)하거나 주소 뒤에 `?v=2`처럼 쿼리를 붙이고, 반영 여부는 로컬 `shasum -a 256 index.html` 값과 라이브 파일 해시가 같은지 대조하면 확실합니다.
